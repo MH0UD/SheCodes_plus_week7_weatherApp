@@ -4,35 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SheCodes Plus weather Appq</title>
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div class="shecodes logo"></div>
-    <div class="city search">
-      <form action="">
-        <input type="text" placeholder="Search for a place" />
+    <div class="weather-app">
+      <div class="shecodes logo"></div>
+      <div class="city search">
+        <form action="">
+          <input type="text" placeholder="Search for a place" />
 
-        <input type="submit" value="Search" />
-      </form>
+          <input type="submit" value="Search" />
+        </form>
+      </div>
+      <div class="city-display"><h1>Add the city name with JS</h1></div>
+      <div class="current-weather">
+        <!-- TEMP | emoji & condition | list of wind & humidity -->
+        <ul class="weather-condition">
+          <li class="weather-temperature">33°C</li>
+          <li class="weather-icon">☀</li>
+          <li class="weather-details">
+            <ul>
+              <li>wind:</li>
+              <li>humidity:</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <footer>
+        Build by
+        <a href="https://github.com/MH0UD" target="_blank">Marion Houdayer</a>,
+        available on <a href="#" target="_blank">GitHub</a>, hosted by
+        <a href="#" target="_blank">Netlify</a>
+      </footer>
     </div>
-    <div class="city-display"><h1>Add the city name with JS</h1></div>
-    <div class="current-weather">
-      <!-- TEMP | emoji & condition | list of wind & humidity -->
-      <ul class="weather-condition">
-        <li class="weather-temperature">33°C</li>
-        <li class="weather-icon">☀</li>
-        <li class="weather-details">
-          <ul>
-            <li>wind:</li>
-            <li>humidity:</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <footer>
-      Build by
-      <a href="https://github.com/MH0UD" target="_blank">Marion Houdayer</a>,
-      available on <a href="#" target="_blank">GitHub</a>, hosted by
-      <a href="#" target="_blank">Netlify</a>
-    </footer>
   </body>
 </html>
