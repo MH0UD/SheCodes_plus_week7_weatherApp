@@ -27,16 +27,20 @@
         </form>
       </div>
       <div class="city-display">
-        <h1>Add the city name with JS</h1>
+        <h1 class="weather-app-city">Add the city name with JS</h1>
         <div class="current-weather">
+          <div class="current-dateTime">Today 10:00</div>
           <!-- TEMP | emoji & condition | list of wind & humidity -->
           <ul class="weather-condition">
             <li class="weather-temperature">33°C</li>
-            <li class="weather-icon">☀</li>
+            <li class="weather-icon">
+              <span class="weather-icon-display">☀</span>
+              <div class="weather-description">sunny</div>
+            </li>
             <li class="weather-details">
-              <ul>
-                <li>wind:</li>
-                <li>humidity:</li>
+              <ul class="wind-humidity">
+                <li>Wind: <strong>25km/h</strong></li>
+                <li>Humidity: <strong>50%</strong></li>
               </ul>
             </li>
           </ul>

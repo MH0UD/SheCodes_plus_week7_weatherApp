@@ -58,9 +58,30 @@ footer {
 .city-display {
   display: block;
 }
+.weather-app-city {
+  font-size: 38px;
+  line-height: 48px;
+}
+.current-dateTime {
+}
 .weather-condition {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  list-style: none;
+}
+.weather-temperature {
+  font-size: 35px;
+  font-weight: 500;
+  /* margin: 0px auto; */
+}
+.weather.icon {
+  text-align: center;
+}
+.weather-icon-display {
+  font-size: 35px;
+  font-weight: 500;
+}
+.wind-humidity {
   list-style: none;
 }
