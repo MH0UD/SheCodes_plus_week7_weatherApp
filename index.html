@@ -11,15 +11,18 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="weather-app">
       <div class="shecodes logo"></div>
       <div class="city-search">
-        <form action="" class="search-form">
+        <form action="" class="search-form" id="search-form">
           <input
             type="text"
             placeholder="Search for a place"
+            required
+            id="search-form-input"
             class="search-form-input"
           />
 
@@ -27,7 +30,9 @@
         </form>
       </div>
       <div class="city-display">
-        <h1 class="weather-app-city">Add the city name with JS</h1>
+        <h1 class="weather-app-city" id="searched-city">
+          Add the city name with JS
+        </h1>
         <div class="current-weather">
           <div class="current-dateTime">Today 10:00</div>
           <!-- TEMP | emoji & condition | list of wind & humidity -->
@@ -60,5 +65,6 @@
         >
       </footer>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
