@@ -29,6 +29,45 @@ function updateWeather(response) {
   let humidityElement = document.querySelector(".humidity-content");
   let humidityData = response.data.temperature.humidity;
   humidityElement.innerHTML = `${humidityData}%`;
+
+  // DateTime update
+  let dateTimeElement = document.querySelector(".current-dateTime");
+  let dateTimeData = response.data.time;
+  dateTimeData = new Date(dateTimeData * 1000);
+  console.log(dateTimeData);
+
+  let weekDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let months = [
+    "Jan.",
+    "Feb",
+    "Mar.",
+    "Apr.",
+    "May",
+    "June",
+    "July",
+    "Aug.",
+    "Sep.",
+    "Oct.",
+    "Nov.",
+    "Dec.",
+  ];
+
+  let day = weekDays[dateTimeData.getDay()];
+  let month = months[dateTimeData.getMonth()];
+  let date = dateTimeData.getDate();
+  let hour = dateTimeData.getHours();
+  let mn = dateTimeData.getMinutes();
+  let dateTimeupdate = `${day}, ${month} ${date} ${hour}:${mn}`;
+  dateTimeElement.innerHTML = dateTimeupdate;
+  console.log(`${day}, ${month} ${date} ${hour}:${mn}`);
 }
 
 function searchCity(city) {
