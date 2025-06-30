@@ -1,13 +1,34 @@
 function updateWeather(response) {
+  // !!!! ADD a condition about the unit system !
   console.log(response.data.temperature.current);
+  // city
+  let cityElement = document.querySelector(".weather-app-city");
+  cityElement.innerHTML = response.data.city;
+  console.log(cityElement.innerHTML);
+
+  // temperature
   let temperatureElement = document.querySelector(".weather-temperature");
   let temp = response.data.temperature.current;
 
   console.log(response.data);
-  let cityElement = document.querySelector(".weather-app-city");
-  cityElement.innerHTML = response.data.city;
-  console.log(cityElement.innerHTML);
-  temperatureElement.innerHTML = Math.round(temp);
+  temperatureElement.innerHTML = `${Math.round(temp)}°C`;
+
+  // weather description
+  let wDescription = document.querySelector(".weather-description");
+  let apiWeatherDescription = response.data.condition.description;
+  wDescription.innerHTML = apiWeatherDescription;
+
+  // wind speed
+  // !!! add a condition for the unit
+  let windElement = document.querySelector(".wind-speed");
+  let windSpeedData = response.data.wind.speed;
+  windSpeedData = Math.round(windSpeedData);
+  windElement.innerHTML = `${windSpeedData}km/h`;
+
+  // humidity content
+  let humidityElement = document.querySelector(".humidity-content");
+  let humidityData = response.data.temperature.humidity;
+  humidityElement.innerHTML = `${humidityData}%`;
 }
 
 function searchCity(city) {
