@@ -34,8 +34,14 @@ function updateWeather(response) {
   let dateTimeElement = document.querySelector(".current-dateTime");
   let dateTimeData = response.data.time;
   dateTimeData = new Date(dateTimeData * 1000);
-  console.log(dateTimeData);
+  let fullDate = dateTimeFormat(dateTimeData);
+  console.log(fullDate);
 
+  dateTimeElement.innerHTML = fullDate;
+  //   console.log(`${day}, ${month} ${date} ${hour}:${mn}`);
+}
+
+function dateTimeFormat(date) {
   let weekDays = [
     "Sunday",
     "Monday",
@@ -45,6 +51,7 @@ function updateWeather(response) {
     "Friday",
     "Saturday",
   ];
+
   let months = [
     "Jan.",
     "Feb",
@@ -59,15 +66,24 @@ function updateWeather(response) {
     "Nov.",
     "Dec.",
   ];
+  let day = weekDays[date.getDay()];
+  let month = months[date.getMonth()];
+  let daysDate = date.getDate();
+  if (daysDate < 10) {
+    daysDate = `0${daysDate}`;
+  }
+  let hour = date.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let mn = date.getMinutes();
+  if (mn < 10) {
+    mn = `0${mn}`;
+  }
 
-  let day = weekDays[dateTimeData.getDay()];
-  let month = months[dateTimeData.getMonth()];
-  let date = dateTimeData.getDate();
-  let hour = dateTimeData.getHours();
-  let mn = dateTimeData.getMinutes();
-  let dateTimeupdate = `${day}, ${month} ${date} ${hour}:${mn}`;
-  dateTimeElement.innerHTML = dateTimeupdate;
-  console.log(`${day}, ${month} ${date} ${hour}:${mn}`);
+  // console.log(`${day}, ${month} ${daysDate} ${hour}:${mn}`);
+  let fullDate = `${day}, ${month} ${daysDate} ${hour}:${mn}`;
+  return fullDate;
 }
 
 function searchCity(city) {
