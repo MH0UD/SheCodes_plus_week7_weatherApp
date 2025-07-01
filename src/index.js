@@ -39,6 +39,17 @@ function updateWeather(response) {
 
   dateTimeElement.innerHTML = fullDate;
   //   console.log(`${day}, ${month} ${date} ${hour}:${mn}`);
+
+  // Icon & text below
+  let iconElement = document.querySelector(".weather-icon-display");
+  let iconUrl = response.data.condition.icon_url;
+  let iconAltText = response.data.condition.icon;
+  let icon = `<img
+                  src=${iconUrl}
+                  alt=${iconAltText}
+                  class="src"
+              />`;
+  iconElement.innerHTML = icon;
 }
 
 function dateTimeFormat(date) {
